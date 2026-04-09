@@ -1,0 +1,67 @@
+import type { Project } from "../config";
+import { SplitLayout } from "../components/SplitLayout";
+import { TerminalList } from "../components/TerminalList";
+import { TERMINAL_RULE } from "../lib/terminal";
+
+type ProjectsViewProps = {
+  onSelect: (index: number) => void;
+  projects: Project[];
+  selectedIndex: number;
+};
+
+export function ProjectsView({
+  onSelect,
+  projects,
+  selectedIndex,
+}: ProjectsViewProps) {
+  const currentProject = projects[selectedIndex];
+
+  return (
+    <SplitLayout
+      left={
+        <TerminalList
+          activeTone="peach"
+          items={projects}
+          selectedIndex={selectedIndex}
+          onSelect={onSelect}
+          getKey={(project) => project.name}
+          getLabel={(project) => project.name}
+        />
+      }
+      right={
+        currentProject ? (
+          <div>
+            <h2 className="m-0 text-base font-bold text-terminal-peach">
+              {currentProject.name}
+            </h2>
+            <div className="my-0 mr-0 mb-3 mt-[0.15rem] text-terminal-surface1">
+              {TERMINAL_RULE}
+            </div>
+            <p className="mb-[0.85rem] mt-0 whitespace-pre-wrap text-terminal-text [overflow-wrap:anywhere]">
+              {currentProject.description}
+            </p>
+            <p className="mb-0 mt-2 whitespace-pre-wrap text-terminal-sapphire [overflow-wrap:anywhere]">
+              {"  ⚡ "}
+              {currentProject.tech.join(" · ")}
+            </p>
+            {currentProject.url ? (
+              <a
+                className="mt-1 block break-all text-terminal-lavender underline"
+                href={currentProject.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {"  🔗 "}
+                {currentProject.url}
+              </a>
+            ) : null}
+          </div>
+        ) : (
+          <div className="whitespace-pre-wrap text-terminal-overlay0">
+            No projects found.
+          </div>
+        )
+      }
+    />
+  );
+}
