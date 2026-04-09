@@ -48,9 +48,12 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-button,
-a {
+button {
   color: inherit;
+  font: inherit;
+}
+
+a {
   font: inherit;
 }
 
