@@ -8,13 +8,13 @@ type TerminalTabsProps = {
 
 export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
   const baseTabClassName =
-    "flex-none cursor-pointer border-0 px-4 py-[0.15rem] whitespace-nowrap transition-colors duration-150 outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px] max-[640px]:min-h-9 max-[640px]:min-w-0 max-[640px]:flex-1 max-[640px]:basis-1/3 max-[640px]:px-2 max-[640px]:text-center max-[480px]:basis-1/2";
+    "flex-none cursor-pointer border-0 px-4 py-[0.15rem] whitespace-nowrap transition-colors duration-150 outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px] max-[640px]:min-h-10 max-[640px]:w-full max-[640px]:px-2 max-[640px]:py-2 max-[640px]:text-center max-[640px]:text-[0.78rem] max-[480px]:text-[0.72rem]";
 
   return (
     <header>
       <div className="h-[calc(1rem+env(safe-area-inset-top))] bg-terminal-base max-[640px]:h-[calc(0.5rem+env(safe-area-inset-top))]" aria-hidden="true" />
       <nav
-        className="flex items-stretch overflow-x-auto overflow-y-hidden whitespace-nowrap bg-terminal-surface0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-[640px]:flex-wrap max-[640px]:overflow-x-hidden max-[640px]:whitespace-normal"
+        className="flex items-stretch overflow-x-auto overflow-y-hidden whitespace-nowrap bg-terminal-surface0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-[640px]:grid max-[640px]:grid-cols-3 max-[640px]:gap-px max-[640px]:overflow-visible max-[640px]:whitespace-normal max-[640px]:bg-terminal-surface1 max-[480px]:grid-cols-2"
         aria-label="Portfolio pages"
       >
         {pages.map((page) => {
