@@ -1,146 +1,131 @@
-name: "Prasen Shakya"
-title: "Computer Science @ Sonoma State University"
+name: "Isaac Salzman"
+title: "Software Engineer"
 
 ascii_art: |
-  ██████╗ ██████╗  █████╗ ███████╗███████╗███╗   ██╗
-  ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝████╗  ██║
-  ██████╔╝██████╔╝███████║███████╗█████╗  ██╔██╗ ██║
-  ██╔═══╝ ██╔══██╗██╔══██║╚════██║██╔══╝  ██║╚██╗██║
-  ██║     ██║  ██║██║  ██║███████║███████╗██║ ╚████║
-  ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝
+  ██╗███████╗ █████╗  █████╗  ██████╗
+  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝
+  ██║███████╗███████║███████║██║     
+  ██║╚════██║██╔══██║██╔══██║██║     
+  ██║███████║██║  ██║██║  ██║╚██████╗
+  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
 intro: |
-  Hi, I am Prasen Shakya!
-  I am a Computer Science student at Sonoma State University
-  with experience building full-stack applications and internal tools.
+  Hi, I'm Isaac Salzman.
+  New-grad software engineer focused on building AI/ML features that ship.
+  I study Computer Science (B.S.) and Mathematics (B.A.) at Sonoma State
+  and have hands-on experience with Python, data pipelines, and
+  LLM-powered prototypes from internships and campus work.
 
   Navigate with arrow keys and learn more about me!
 
 skills:
   - category: "Languages"
     items:
-      - name: "JavaScript"
-      - name: "TypeScript"
-      - name: "Python"
-      - name: "C#"
-      - name: "SQL"
-      - name: "C++"
-      - name: "Golang"
-      - name: "HTML/CSS"
+      - "Rust"
+      - "Python"
+      - "C++"
+      - "C"
+      - "MySQL"
 
-  - category: "Frontend"
+  - category: "ML / AI"
     items:
-      - "React.js"
-      - "Tailwind CSS"
-      - "HTML"
-      - "CSS"
-      - "JavaScript"
-      - "TypeScript"
-
-  - category: "Backend"
-    items:
-      - "Node.js"
-      - "Golang"
-      - ".NET"
-      - "REST APIs"
-      - "SQL"
-      - "SQLite"
-
-  - category: "Cloud / DevOps"
-    items:
-      - "AWS EC2"
-      - "AWS S3"
-      - "AWS Lambda"
-      - "Git"
-      - "GitHub"
+      - "PyTorch"
+      - "Scikit-learn"
+      - "LLMs"
+      - "Data Pipelines"
+      - "Computer Vision"
+      - "Transformers"
 
   - category: "Tools"
     items:
-      - "VS Code"
-      - "GitHub"
-      - "Office 365"
-      - "Godot"
-      - "Figma"
-experiences:
-  - company: "Sonoma State University"
-    role: "Software Engineering Intern"
-    location: "Rohnert Park, CA"
-    period: "Aug. 2025 - Present"
-    highlights:
-      - "Integrated an open-source AI-based PDF remediation tool into SSU’s AWS environment for accessibility compliance."
-      - "Redesigned the UI to match Sonoma State branding and improved the overall user experience."
-      - "Integrated SSO, removed upload limits, and enabled multi-file processing."
-      - "Designed and planned an ETL migration to move Drupal FAQ content into Halo ITSM Knowledge."
-
-  - company: "Uber Technologies"
-    role: "Software Engineering Intern"
-    location: "San Francisco, CA"
-    period: "May 2025 - Aug. 2025"
-    highlights:
-      - "Worked on DragonCrawl, an internal ML-powered platform for automated end-to-end mobile UI testing."
-      - "Built a full-stack dashboard to visualize and filter logs, improving debugging efficiency and reducing time spent identifying issues."
-      - "Used React, APIs, and testing best practices to build scalable internal tooling."
-      - "Participated in code reviews, sprint planning, and stand-ups in an Agile environment."
-
-  - company: "Sonoma County ISD"
-    role: "Software Engineering Intern"
-    location: "Santa Rosa, CA"
-    period: "Nov. 2024 - May 2025"
-    highlights:
-      - "Developed internal full-stack web applications using .NET, HTML, CSS, JavaScript, and SQL."
-      - "Designed and optimized SQL databases with complex queries and stored procedures."
-      - "Improved an accounting data management app by modernizing the UI with Bootstrap and improving SQL query performance."
-      - "Refactored legacy code and improved search performance while maintaining dynamic UI behavior."
-
-  - company: "Kaiser Permanente"
-    role: "KP Launch Intern"
-    location: "Santa Rosa, CA"
-    period: "June 2024 - Aug. 2024"
-    highlights:
-      - "Supported healthcare staff with mask fit testing and compliance workflows."
-      - "Handled data entry, scanning, and document management to streamline departmental operations."
-      - "Collaborated with staff and interns on workplace safety and staff experience projects."
-      - "Used Office 365 tools for communication, scheduling, and clerical support."
+      - "Linux"
+      - "Git"
+      - "Bash"
+      - "Neovim"
+      - "Vim"
+      - "LaTeX"
+      - "Markdown"
 
 projects:
-  - name: "DragonCrawl Debug Dashboard (Uber)"
-    description: "Enhanced Uber’s internal DragonCrawl platform by building a full-stack dashboard to visualize and filter logs. Transformed raw log output into a usable interface, significantly improving debugging efficiency and reducing time spent identifying issues."
-    tech: ["React", "Golang", "Python", "Full Stack", "Testing"]
-    url: "https://www.uber.com/us/en/blog/generative-ai-for-high-quality-mobile-testing/"
+  - name: "Shorelark Expanded"
+    description: "Rust + WebAssembly evolution simulator with neural-network agents, genetic algorithms, predator-prey co-evolution, and per-generation fitness and survival metrics."
+    tech: ["Rust", "JavaScript", "WebAssembly", "Neural Networks"]
+    url: "https://github.com/Czensored/shorelark-expanded"
+    links:
+      - label: "Demo"
+        href: "https://shorelark.isaacsalzman.com/"
+      - label: "GitHub"
+        href: "https://github.com/Czensored/shorelark-expanded"
+    media:
+      - type: "video"
+        src: "/images/shorelark/shorelark-demo.mp4"
+        alt: "Shorelark Expanded simulation demo"
+        caption: "Shorelark Expanded running in the browser."
+      - type: "image"
+        src: "/images/shorelark/batch_trends.png"
+        alt: "Batch training trends across Shorelark runs"
+        caption: "Aggregate trends from 500 runs x 300 generations, including fitness trajectories, distribution bands, and prey-predator tradeoffs."
 
-  - name: "AI PDF Accessibility (SSU)"
-    description: "Implemented and deployed an open-source AI-based PDF remediation tool into Sonoma State University’s AWS environment. Redesigned the UI to match SSU branding, integrated SSO authentication, removed upload limits, and enabled multi-file processing to improve accessibility compliance across campus systems."
-    tech: ["AWS", "React", "Accessibility", "AI", "SSO"]
+  - name: "PCformer"
+    description: "Transformer-based cell type classification pipeline built on a foundation model pre-trained on 500K+ cells. Code is private due to research constraints."
+    tech: ["Python", "PyTorch", "Transformers", "ML Pipelines"]
     url: ""
 
-  - name: "Drupal to Halo ETL Migration (SSU)"
-    description: "Built an ETL pipeline to migrate Sonoma State University's FAQ knowledge base from Drupal to Halo ITSM. Extracted data via Drupal’s JSON API, transformed HTML into structured formats, and loaded it into Halo through its API—automating a previously manual and time-consuming process."
-    tech: ["Python", "APIs", "ETL", "Docker", "Data Migration"]
+  - name: "Othello AI"
+    description: "Browser-based Othello/Reversi AI using minimax with alpha-beta pruning, with move selection implemented in Rust and rendered for the web."
+    tech: ["Rust", "Python", "JavaScript", "Game AI"]
+    url: "https://github.com/Czensored/othello-ai-demo"
+
+  - name: "Grid Vision Reasoning System"
+    description: "Three-stage Detectron2 vision pipeline covering segmentation, grid mapping, and decision logic for grid-based image tasks. Code is private, but the architecture and tradeoffs are discussable."
+    tech: ["Python", "PyTorch", "Detectron2", "Computer Vision"]
     url: ""
 
-  - name: "Worklist Web App (Sonoma County ISD)"
-    description: "Improved an internal full-stack web application used for data management during my Sonoma County internship by modernizing the UI with Bootstrap and optimizing SQL queries to enhance performance and usability."
-    tech: ["C#", ".NET", "SQL", "Bootstrap"]
-    url: ""
+  - name: "Daily Programmer"
+    description: "A collection of problem-solving exercises and solutions from r/DailyProgrammer."
+    tech: ["Algorithms", "Problem Solving"]
+    url: "https://github.com/Czensored/practice/tree/main/dailyprogrammer"
 
-  - name: "Schedulify"
-    description: "A full-stack scheduling app designed to simplify group planning by allowing users to create events, share links, collect availability, and quickly identify overlapping times."
-    tech: ["React", "Vite", "Node.js", "Express", "SQL"]
-    url: "https://github.com/prasen-shakya/Schedulify"
+  - name: "Advent of Code"
+    description: "Solutions to the annual Advent of Code programming event, focused on algorithmic problem solving and clean implementation."
+    tech: ["Algorithms", "Puzzles", "Yearly Challenges"]
+    url: "https://github.com/Czensored/advent-of-code"
 
-  - name: "SRHS Badminton Website"
-    description: "A multi-page website built for the Santa Rosa High School badminton team, providing schedules, team information, and contact resources for a real community audience."
-    tech: ["HTML", "CSS", "JavaScript"]
-    url: "https://github.com/prasen-shakya/SRHS-Badminton-Website"
+  - name: "DFA Playground"
+    description: "Table-driven DFA scanners and tokenizers built for text parsing experiments."
+    tech: ["C/C++", "Parsing", "Automata"]
+    url: "https://github.com/Czensored/practice/tree/main/DFA-Practice"
 
-  - name: "Tiny Swords"
-    description: "A small game development project built in Godot that explores player movement, combat systems, and interactive gameplay mechanics."
-    tech: ["Godot", "GDScript", "Game Development"]
-    url: "https://github.com/prasen-shakya/Tiny-Swords"
+  - name: "Dutch Flag"
+    description: "Performance comparisons of different Dutch National Flag implementations in Rust."
+    tech: ["Rust", "Algorithms", "Performance"]
+    url: "https://github.com/Czensored/practice/tree/main/dutch-flag"
+
+  - name: "Sudoku Solver"
+    description: "Depth-first search solver for 9x9 Sudoku puzzles."
+    tech: ["Algorithms", "Search"]
+    url: "https://github.com/Czensored/practice/tree/main/smaller-projects/sudoku-solver"
+
+experiences:
+  - company: "UCSF"
+    role: "Undergraduate Data Analyst"
+    location: "San Francisco, CA"
+    period: "June - August 2023, May - September 2024"
+    highlights:
+      - "Developed a transformer-based model to automatically annotate prostate cell types from multimodal single-cell and spatial omics data."
+      - "Applied non-negative matrix factorization to identify neuroendocrine patterns in prostate cancer samples from the RESPOND cohort of African American men."
+
+  - company: "Sonoma State University"
+    role: "Computer Science and Mathematics Tutor"
+    location: "Rohnert Park, CA"
+    period: "April 2023 - September 2024"
+    highlights:
+      - "Led lab and classroom sections for computer science courses, providing real-time debugging support and technical guidance."
+      - "Debugged student code in Python and C++, emphasizing systematic problem-solving and engineering best practices."
+      - "Designed programming projects to reinforce core concepts such as data structures, algorithms, and problem decomposition."
 
 contact:
-  email: "prasen1265@gmail.com"
-  github: "https://github.com/prasen-shakya"
-  linkedin: "https://www.linkedin.com/in/shakya-prasen/"
-  website: ""
-  twitter: ""
+  email: "isaac@isaacsalzman.com"
+  resume: "Isaac_Salzman_Resume.pdf"
+  github: "https://github.com/Czensored"
+  linkedin: "https://www.linkedin.com/in/isaac-salzman/"
