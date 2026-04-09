@@ -41,11 +41,7 @@ export function HomeView({ asciiArt, intro, title }: HomeViewProps) {
       const nextScale = Math.min(1, availableWidth / nextWidth);
 
       setAsciiMetrics((current) => {
-        if (
-          current.width === nextWidth &&
-          current.height === nextHeight &&
-          Math.abs(current.scale - nextScale) < 0.001
-        ) {
+        if (current.width === nextWidth && current.height === nextHeight && Math.abs(current.scale - nextScale) < 0.001) {
           return current;
         }
 
@@ -87,7 +83,7 @@ export function HomeView({ asciiArt, intro, title }: HomeViewProps) {
           </pre>
         </div>
       </div>
-      <h1 className="mt-5 text-[clamp(1rem,1.6vw,1.4rem)] font-bold text-terminal-blue">{title}</h1>
+      <h1 className="my-5 text-[clamp(1rem,1.6vw,1.4rem)] font-bold text-terminal-blue">{title}</h1>
       <pre className="mt-4 max-w-[74ch] whitespace-pre-wrap text-terminal-subtext0 wrap-anywhere max-[640px]:w-full max-[640px]:text-left">{intro}</pre>
     </section>
   );

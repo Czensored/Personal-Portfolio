@@ -40,7 +40,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
       </nav>
       <div className="hidden bg-terminal-surface0 max-[640px]:block">
         <div className="flex items-center justify-between gap-3 px-3 py-2">
-          <span className="truncate font-bold text-terminal-blue">{pageLabels[activePage]}</span>
+          <span className="truncate font-bold text-terminal-white">{pageLabels[activePage]}</span>
           <button
             type="button"
             className="flex min-h-9 min-w-9 items-center justify-center rounded-md border border-terminal-surface1 bg-terminal-base px-2 text-terminal-text outline-none transition-colors duration-150 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]"
@@ -61,7 +61,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
             {pages.map((page) => {
               const isActive = page === activePage;
               const tabClassName = isActive
-                ? `${mobileTabClassName} bg-terminal-blue font-bold text-white`
+                ? `${mobileTabClassName} bg-terminal-blue font-bold text-terminal-crust`
                 : `${mobileTabClassName} text-terminal-text hover:bg-terminal-surface1/70 hover:text-terminal-rosewater`;
 
               return (
