@@ -12,13 +12,9 @@ ascii_art: |
 intro: |
   Hi, I am Prasen Shakya!
   I am a Computer Science student at Sonoma State University
-  with experience building full-stack applications, accessibility tools,
-  internal platforms, and cloud-based software.
+  with experience building full-stack applications and internal tools.
 
-  I enjoy creating practical software for coordination, community,
-  and user-focused experiences.
-
-  Navigate with arrow keys and explore my projects.
+  Navigate with arrow keys and learn more about me!
 
 skills:
   - category: "Languages"
@@ -105,7 +101,7 @@ experiences:
       - "Handled data entry, scanning, and document management to streamline departmental operations."
       - "Collaborated with staff and interns on workplace safety and staff experience projects."
       - "Used Office 365 tools for communication, scheduling, and clerical support."
-      
+
 projects:
   - name: "DragonCrawl Debug Dashboard (Uber)"
     description: "Enhanced Uber’s internal DragonCrawl platform by building a full-stack dashboard to visualize and filter logs. Transformed raw log output into a usable interface, significantly improving debugging efficiency and reducing time spent identifying issues."
