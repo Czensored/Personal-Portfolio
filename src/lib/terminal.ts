@@ -35,10 +35,10 @@ export function shiftPage(currentPage: PageKey, delta: number): PageKey {
 export function getStatusText(activePage: PageKey, isCompact: boolean): string {
   if (isCompact) {
     if (activePage === "skills" || activePage === "projects" || activePage === "education" || activePage === "experience") {
-      return "  tap tabs  │  tap items  │  scroll";
+      return "tap menu  │  choose item  │  scroll";
     }
 
-    return "  tap tabs  │  scroll";
+    return "tap menu  │  scroll";
   }
 
   let hints = "  ← → pages";

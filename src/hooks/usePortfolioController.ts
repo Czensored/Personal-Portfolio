@@ -93,15 +93,13 @@ export function usePortfolioController(
           setSelectedProject((current) => clampIndex(current - 1, projectCount));
         }
 
+        if (activePage === "education") {
+          setSelectedEducation((current) => clampIndex(current - 1, educationCount));
+        }
+
         if (activePage === "experience") {
           setSelectedExperience((current) =>
             clampIndex(current - 1, experienceCount),
-          );
-        }
-
-        if (activePage === "education") {
-          setSelectedEducation((current) =>
-            clampIndex(current - 1, educationCount),
           );
         }
 
@@ -119,15 +117,13 @@ export function usePortfolioController(
           setSelectedProject((current) => clampIndex(current + 1, projectCount));
         }
 
+        if (activePage === "education") {
+          setSelectedEducation((current) => clampIndex(current + 1, educationCount));
+        }
+
         if (activePage === "experience") {
           setSelectedExperience((current) =>
             clampIndex(current + 1, experienceCount),
-          );
-        }
-
-        if (activePage === "education") {
-          setSelectedEducation((current) =>
-            clampIndex(current + 1, educationCount),
           );
         }
       }
