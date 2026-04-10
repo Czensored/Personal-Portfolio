@@ -158,6 +158,19 @@ projects:
     tech: ["Algorithms", "Search"]
     url: "https://github.com/Czensored/practice/tree/main/smaller-projects/sudoku-solver"
 
+education:
+  - school: "Sonoma State University"
+    location: "Rohnert Park, CA"
+    period: "Expected May 2026"
+    degrees:
+      - "B.S. Computer Science (GPA: 3.92)"
+      - "B.A. Mathematics (GPA: 3.97)"
+    honors:
+      - "Graduating with Distinction in Computer Science"
+      - "Dean's List: Fall 2022, Fall 2023, Spring 2024, Fall 2025"
+      - "MESA Honors Program"
+      - "Putnam Mathematical Competition (2025): Score 10, Rank 1375/4329"
+
 experiences:
   - company: "UCSF"
     company_display: "University of California, San Francisco"

@@ -3,6 +3,7 @@ import { portfolioData, type PortfolioConfig } from "./config";
 import { usePortfolioController } from "./hooks/usePortfolioController";
 import { getContactRows } from "./lib/terminal";
 import { ContactView } from "./views/ContactView";
+import { EducationView } from "./views/EducationView";
 import { ExperienceView } from "./views/ExperienceView";
 import { HomeView } from "./views/HomeView";
 import { ProjectsView } from "./views/ProjectsView";
@@ -23,9 +24,11 @@ function ErrorState({ error }: { error: string }) {
 function PortfolioApp({ config }: { config: PortfolioConfig }) {
   const {
     activePage,
+    selectEducation,
     selectExperience,
     selectProject,
     selectSkillCategory,
+    selectedEducation,
     selectedExperience,
     selectedProject,
     selectedSkillCategory,
@@ -59,6 +62,14 @@ function PortfolioApp({ config }: { config: PortfolioConfig }) {
         projects={config.projects}
         selectedIndex={selectedProject}
         onSelect={selectProject}
+      />
+    );
+  } else if (activePage === "education") {
+    content = (
+      <EducationView
+        education={config.education}
+        selectedIndex={selectedEducation}
+        onSelect={selectEducation}
       />
     );
   } else if (activePage === "experience") {

@@ -6,6 +6,7 @@ export const pageLabels: Readonly<Record<PageKey, string>> = {
   home: "Home",
   skills: "Skills",
   projects: "Projects",
+  education: "Education",
   experience: "Experience",
   contact: "Contact",
 };
@@ -33,7 +34,7 @@ export function shiftPage(currentPage: PageKey, delta: number): PageKey {
 
 export function getStatusText(activePage: PageKey, isCompact: boolean): string {
   if (isCompact) {
-    if (activePage === "skills" || activePage === "projects" || activePage === "experience") {
+    if (activePage === "skills" || activePage === "projects" || activePage === "education" || activePage === "experience") {
       return "  tap tabs  │  tap items  │  scroll";
     }
 
@@ -42,7 +43,7 @@ export function getStatusText(activePage: PageKey, isCompact: boolean): string {
 
   let hints = "  ← → pages";
 
-  if (activePage === "skills" || activePage === "projects" || activePage === "experience") {
+  if (activePage === "skills" || activePage === "projects" || activePage === "education" || activePage === "experience") {
     hints += "  │  ↑ ↓ select";
   }
 

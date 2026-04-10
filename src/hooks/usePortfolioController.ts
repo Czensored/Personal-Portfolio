@@ -10,10 +10,12 @@ import { useCompactViewport } from "./useCompactViewport";
 
 type PortfolioController = {
   activePage: PageKey;
+  selectEducation: (index: number) => void;
   selectExperience: (index: number) => void;
   selectProject: (index: number) => void;
   selectSkillCategory: (index: number) => void;
   setActivePage: (page: PageKey) => void;
+  selectedEducation: number;
   selectedExperience: number;
   selectedProject: number;
   selectedSkillCategory: number;
@@ -26,11 +28,13 @@ export function usePortfolioController(
   const [activePage, setActivePage] = useState<PageKey>("home");
   const [selectedSkillCategory, setSelectedSkillCategory] = useState(0);
   const [selectedProject, setSelectedProject] = useState(0);
+  const [selectedEducation, setSelectedEducation] = useState(0);
   const [selectedExperience, setSelectedExperience] = useState(0);
   const isCompact = useCompactViewport();
 
   const skillCount = config.skills.length;
   const projectCount = config.projects.length;
+  const educationCount = config.education.length;
   const experienceCount = config.experiences.length;
 
   const selectSkillCategory = (index: number) => {
@@ -39,6 +43,10 @@ export function usePortfolioController(
 
   const selectProject = (index: number) => {
     setSelectedProject(clampIndex(index, projectCount));
+  };
+
+  const selectEducation = (index: number) => {
+    setSelectedEducation(clampIndex(index, educationCount));
   };
 
   const selectExperience = (index: number) => {
@@ -52,8 +60,9 @@ export function usePortfolioController(
   useEffect(() => {
     setSelectedSkillCategory((current) => clampIndex(current, skillCount));
     setSelectedProject((current) => clampIndex(current, projectCount));
+    setSelectedEducation((current) => clampIndex(current, educationCount));
     setSelectedExperience((current) => clampIndex(current, experienceCount));
-  }, [experienceCount, projectCount, skillCount]);
+  }, [educationCount, experienceCount, projectCount, skillCount]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -90,6 +99,12 @@ export function usePortfolioController(
           );
         }
 
+        if (activePage === "education") {
+          setSelectedEducation((current) =>
+            clampIndex(current - 1, educationCount),
+          );
+        }
+
         return;
       }
 
@@ -109,19 +124,27 @@ export function usePortfolioController(
             clampIndex(current + 1, experienceCount),
           );
         }
+
+        if (activePage === "education") {
+          setSelectedEducation((current) =>
+            clampIndex(current + 1, educationCount),
+          );
+        }
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activePage, experienceCount, projectCount, skillCount]);
+  }, [activePage, educationCount, experienceCount, projectCount, skillCount]);
 
   return {
     activePage,
+    selectEducation,
     selectExperience,
     selectProject,
     selectSkillCategory,
     setActivePage,
+    selectedEducation,
     selectedExperience,
     selectedProject,
     selectedSkillCategory,

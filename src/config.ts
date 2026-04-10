@@ -5,6 +5,7 @@ export const pages = [
   "home",
   "skills",
   "projects",
+  "education",
   "experience",
   "contact",
 ] as const;
@@ -45,6 +46,13 @@ type RawConfig = {
     location?: string;
     period?: string;
     highlights?: string[];
+  }>;
+  education?: Array<{
+    school?: string;
+    location?: string;
+    period?: string;
+    degrees?: string[];
+    honors?: string[];
   }>;
   contact?: {
     email?: string;
@@ -96,6 +104,14 @@ export type Experience = {
   highlights: string[];
 };
 
+export type EducationEntry = {
+  school: string;
+  location: string;
+  period: string;
+  degrees: string[];
+  honors: string[];
+};
+
 export type Contact = {
   email: string;
   github: string;
@@ -112,6 +128,7 @@ export type PortfolioConfig = {
   intro: string;
   skills: SkillCategory[];
   projects: Project[];
+  education: EducationEntry[];
   experiences: Experience[];
   contact: Contact;
 };
@@ -178,6 +195,15 @@ function normalizeConfig(raw: RawConfig): PortfolioConfig {
           .filter((item) => item.src.length > 0),
       }))
       .filter((project) => project.name.length > 0),
+    education: (raw.education ?? [])
+      .map((entry) => ({
+        school: asText(entry.school),
+        location: asText(entry.location),
+        period: asText(entry.period),
+        degrees: (entry.degrees ?? []).map(asText).filter(Boolean),
+        honors: (entry.honors ?? []).map(asText).filter(Boolean),
+      }))
+      .filter((entry) => entry.school.length > 0),
     experiences: (raw.experiences ?? [])
       .map((experience) => ({
         company: asText(experience.company),
