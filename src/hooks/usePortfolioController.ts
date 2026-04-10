@@ -20,6 +20,8 @@ type PortfolioController = {
   statusText: string;
 };
 
+const BROWSER_TITLE = "Prasen Shakya Portfolio";
+
 export function usePortfolioController(
   config: PortfolioConfig,
 ): PortfolioController {
@@ -46,8 +48,8 @@ export function usePortfolioController(
   };
 
   useEffect(() => {
-    document.title = `${config.name} | ${config.title}`;
-  }, [config.name, config.title]);
+    document.title = BROWSER_TITLE;
+  }, []);
 
   useEffect(() => {
     setSelectedSkillCategory((current) => clampIndex(current, skillCount));
