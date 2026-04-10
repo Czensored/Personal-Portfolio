@@ -11,12 +11,16 @@ type ProjectsViewProps = {
 
 export function ProjectsView({ onSelect, projects, selectedIndex }: ProjectsViewProps) {
   const currentProject = projects[selectedIndex];
+  const hasCustomLinks = currentProject ? currentProject.links.length > 0 : false;
   const projectLinks = currentProject
-    ? currentProject.links.length > 0
+    ? hasCustomLinks
       ? currentProject.links
       : currentProject.url
-        ? [{ label: "Repo", href: currentProject.url }]
+        ? [{ label: "", href: currentProject.url }]
         : []
+    : [];
+  const descriptionLines = currentProject
+    ? currentProject.description.split("\n")
     : [];
 
   return (
@@ -36,13 +40,42 @@ export function ProjectsView({ onSelect, projects, selectedIndex }: ProjectsView
           <div>
             <h2 className="m-0 text-base font-bold text-terminal-peach">{currentProject.name}</h2>
             <div className="my-0 mr-0 mb-3 mt-[0.15rem] text-terminal-surface1">{TERMINAL_RULE}</div>
-            <p className="mb-[0.85rem] mt-0 whitespace-pre-wrap text-terminal-text wrap-anywhere">{currentProject.description}</p>
+            <div className="mb-[0.85rem] mt-0 text-terminal-text">
+              {descriptionLines.map((line, index) => {
+                if (!line.trim()) {
+                  return <div key={`${currentProject.name}-spacer-${index}`} className="h-[1rem]" />;
+                }
+
+                if (line.startsWith("- ")) {
+                  return (
+                    <div
+                      key={`${currentProject.name}-bullet-${index}`}
+                      className="mb-[0.45rem] grid grid-cols-[1.25rem_minmax(0,1fr)] items-start"
+                    >
+                      <span aria-hidden="true">-</span>
+                      <span className="wrap-anywhere">{line.slice(2)}</span>
+                    </div>
+                  );
+                }
+
+                return (
+                  <p
+                    key={`${currentProject.name}-line-${index}`}
+                    className="mb-[0.45rem] mt-0 whitespace-pre-wrap wrap-anywhere"
+                  >
+                    {line}
+                  </p>
+                );
+              })}
+            </div>
             {projectLinks.map((link) => (
               <div
                 key={`${currentProject.name}-${link.label}-${link.href}`}
                 className="mb-[0.55rem] min-w-0 break-all text-terminal-text"
               >
-                <span className="text-terminal-overlay1">[{link.label}] </span>
+                {hasCustomLinks && link.label ? (
+                  <span className="text-terminal-overlay1">[{link.label}] </span>
+                ) : null}
                 <a
                   className="underline hover:text-terminal-blue"
                   href={link.href}

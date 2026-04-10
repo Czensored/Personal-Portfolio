@@ -38,8 +38,8 @@ export function ExperienceView({
           <div>
             <h2 className="m-0 text-base font-bold text-terminal-peach">
               {currentExperience.role
-                ? `${currentExperience.role} @ ${currentExperience.company}`
-                : currentExperience.company}
+                ? `${currentExperience.role} @ ${currentExperience.companyDisplay}`
+                : currentExperience.companyDisplay}
             </h2>
             <div className="my-0 mr-0 mb-3 mt-[0.15rem] text-terminal-surface1">
               {TERMINAL_RULE}

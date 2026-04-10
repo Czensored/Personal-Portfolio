@@ -40,6 +40,7 @@ type RawConfig = {
   }>;
   experiences?: Array<{
     company?: string;
+    company_display?: string;
     role?: string;
     location?: string;
     period?: string;
@@ -88,6 +89,7 @@ export type ProjectMedia = {
 
 export type Experience = {
   company: string;
+  companyDisplay: string;
   role: string;
   location: string;
   period: string;
@@ -179,6 +181,7 @@ function normalizeConfig(raw: RawConfig): PortfolioConfig {
     experiences: (raw.experiences ?? [])
       .map((experience) => ({
         company: asText(experience.company),
+        companyDisplay: asText(experience.company_display) || asText(experience.company),
         role: asText(experience.role),
         location: asText(experience.location),
         period: asText(experience.period),

@@ -48,9 +48,18 @@ skills:
 
 projects:
   - name: "Shorelark Expanded"
-    description: "Rust + WebAssembly evolution simulator with neural-network agents, genetic algorithms, predator-prey co-evolution, and per-generation fitness and survival metrics."
-    tech: ["Rust", "JavaScript", "WebAssembly", "Neural Networks"]
-    url: "https://github.com/Czensored/shorelark-expanded"
+    description: |
+      August 2025 - March 2026 | Senior Project at Sonoma State University
+
+      Shorelark Expanded is a browser-based evolution simulator built in Rust and WebAssembly.
+      This project builds on an existing evolution simulation and adds selection pressures to visualize their effect on the population, including food constraints, hunger constraints, and a predatorial species.
+
+      - Built feed-forward neural-network control and genetic algorithm updates in Rust, integrated with a JavaScript UI for real-time training controls and visual debugging.
+      - Implemented predator behavior and reproduction as a separate evolving population, enabling predator-prey co-evolution under competing selection pressures.
+      - Surfaced 7 per-generation metrics in both the live browser stats panel and batch experiment logs, supporting real-time inspection and offline analysis.
+      - Built a reproducible batch experiment pipeline for 500 runs x 300 generations, logging per-generation metrics and visualizing convergence, fitness distributions, and prey-predator co-evolution phase plots.
+      - Measured extinction behavior across runs; 122/500 runs (24.4%) ended in complete prey die-out under current settings.
+    tech: ["Rust", "JavaScript", "WebAssembly", "Neural Networks", "HTML/CSS"]
     links:
       - label: "Demo"
         href: "https://shorelark.isaacsalzman.com/"
@@ -67,18 +76,61 @@ projects:
         caption: "Aggregate trends from 500 runs x 300 generations, including fitness trajectories, distribution bands, and prey-predator tradeoffs."
 
   - name: "PCformer"
-    description: "Transformer-based cell type classification pipeline built on a foundation model pre-trained on 500K+ cells. Code is private due to research constraints."
-    tech: ["Python", "PyTorch", "Transformers", "ML Pipelines"]
+    description: |
+      May 2024 - September 2024 | Research internship at UCSF
+
+      Transformer-based pipeline for cell type classification across multimodal single-cell and spatial omics datasets.
+
+      - Implemented a transformer pipeline for prostate cell type annotation across single-cell and spatial omics datasets.
+      - Maintained and adapted a foundation transformer pre-trained on 560K+ cells and 13,745 genes for supervised prostate cell classification.
+      - Developed and maintained training, fine-tuning, and inference scripts using PyTorch, supporting configurable model sizes and datasets.
+      - Automated end-to-end experiments with SGE job scripts on the Wynton HPC cluster, enabling reproducible runs on remote GPU instances.
+
+      Code is private due to research constraints associated with this project.
+    tech: ["Python", "PyTorch", "Bash", "Transformers", "ML Pipelines"]
+
     url: ""
 
   - name: "Othello AI"
-    description: "Browser-based Othello/Reversi AI using minimax with alpha-beta pruning, with move selection implemented in Rust and rendered for the web."
-    tech: ["Rust", "Python", "JavaScript", "Game AI"]
-    url: "https://github.com/Czensored/othello-ai-demo"
+    description: |
+      June 2024 - July 2025 | Personal Project
+
+      Built an Othello/Reversi engine around classical adversarial search, then deployed it as a browser-playable Rust/Wasm demo.
+      The current version keeps rendering and controls in JavaScript while running move selection in Rust compiled to WebAssembly.
+
+      - Implemented minimax with alpha-beta pruning in Rust, including pass-turn handling and legal move generation for full Othello rules.
+      - Ported the original weighted evaluator into the Wasm engine so the browser demo uses the same scoring model as the native project.
+      - Added an endgame mode switch to coin-parity search (`final moves`) when `currentScore + 6 + depth >= 64` to reduce late-game wait times.
+      - Split rendering and input handling into JavaScript while keeping search and move selection in Rust, making the browser demo practical to ship through WebAssembly.
+
+      Earlier iterations used a Python Turtle frontend with a Rust backend via Maturin. The current public demo runs fully in the browser using Rust and WebAssembly.
+    tech: ["Rust", "WebAssembly", "JavaScript", "Game AI"]
+    links:
+      - label: "Demo"
+        href: "https://othello.isaacsalzman.com/"
+      - label: "GitHub"
+        href: "https://github.com/Czensored/othello-ai-demo"
+      - label: "Archived Version"
+        href: "https://github.com/Czensored/othello-hybrid"
+    media:
+      - type: "image"
+        src: "/images/othello/othello-ai-demo.png"
+        alt: "Othello AI demo screenshot"
+        caption: "Othello AI running in the browser."
 
   - name: "Grid Vision Reasoning System"
-    description: "Three-stage Detectron2 vision pipeline covering segmentation, grid mapping, and decision logic for grid-based image tasks. Code is private, but the architecture and tradeoffs are discussable."
-    tech: ["Python", "PyTorch", "Detectron2", "Computer Vision"]
+    description: |
+      January 2022 - March 2022 | Personal Project
+
+      Built a computer vision system to detect, segment, and reason about objects in grid-based challenge images.
+      The project focused on robust perception plus rule-based spatial decision logic.
+
+      - Trained and evaluated Detectron2 instance segmentation models for object-level detection in noisy, tiled image layouts.
+      - Designed post-processing logic to map detections onto grid coordinates and select target cells from spatial constraints.
+      - Implemented a 3-stage pipeline: segmentation, grid-coordinate mapping, and rule-based decision selection.
+
+      Code is private for this project, but I can discuss architecture, tradeoffs, and implementation details.
+    tech: ["Python", "PyTorch", "Detectron2", "Cv2", "Computer Vision"]
     url: ""
 
   - name: "Daily Programmer"
@@ -94,7 +146,7 @@ projects:
   - name: "DFA Playground"
     description: "Table-driven DFA scanners and tokenizers built for text parsing experiments."
     tech: ["C/C++", "Parsing", "Automata"]
-    url: "https://github.com/Czensored/practice/tree/main/DFA-Practice"
+    url: "https://github.com/Czensored/practice/tree/main/dfa-playground"
 
   - name: "Dutch Flag"
     description: "Performance comparisons of different Dutch National Flag implementations in Rust."
@@ -108,6 +160,7 @@ projects:
 
 experiences:
   - company: "UCSF"
+    company_display: "University of California, San Francisco"
     role: "Undergraduate Data Analyst"
     location: "San Francisco, CA"
     period: "June - August 2023, May - September 2024"

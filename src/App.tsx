@@ -80,7 +80,7 @@ function PortfolioApp({ config }: { config: PortfolioConfig }) {
         <section className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto">
           {content}
         </section>
-        <footer className="min-h-[1.7rem] overflow-x-auto overflow-y-hidden whitespace-nowrap bg-terminal-mantle px-4 py-[0.2rem] text-terminal-overlay0 [scrollbar-width:none] [padding-bottom:calc(0.2rem+env(safe-area-inset-bottom))] [&::-webkit-scrollbar]:hidden max-[640px]:px-3">
+        <footer className="sticky bottom-0 z-10 min-h-[1.7rem] shrink-0 overflow-x-auto overflow-y-hidden whitespace-nowrap border-t border-terminal-surface1 bg-terminal-mantle px-4 py-[0.2rem] text-terminal-overlay0 [scrollbar-width:none] [padding-bottom:calc(0.2rem+env(safe-area-inset-bottom))] [&::-webkit-scrollbar]:hidden max-[640px]:px-3">
           {statusText}
         </footer>
       </section>
