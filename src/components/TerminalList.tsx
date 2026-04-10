@@ -16,15 +16,15 @@ export function TerminalList<T,>({
   selectedIndex,
 }: TerminalListProps<T>) {
   const baseButtonClassName =
-    "group w-full cursor-pointer border-0 bg-transparent px-0 py-[0.12rem] text-left outline-none transition-colors duration-150 focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px] max-[640px]:min-h-12 max-[640px]:rounded-lg max-[640px]:border max-[640px]:border-terminal-surface1/80 max-[640px]:bg-terminal-base/70 max-[640px]:px-3 max-[640px]:py-3 max-[640px]:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]";
+    "group w-full cursor-pointer border-0 bg-transparent px-0 py-[0.12rem] text-left outline-none transition-colors duration-150 focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px] max-[640px]:min-h-11 max-[640px]:border-b max-[640px]:border-terminal-surface1/60 max-[640px]:px-1 max-[640px]:py-2";
 
   return (
-    <div className="flex flex-col max-[640px]:gap-2">
+    <div className="flex flex-col">
       {items.map((item, index) => {
         const isActive = index === selectedIndex;
         const buttonClassName = isActive
-          ? `${baseButtonClassName} max-[640px]:border-terminal-surface2 max-[640px]:bg-terminal-surface0/90`
-          : `${baseButtonClassName} max-[640px]:hover:border-terminal-surface2 max-[640px]:hover:bg-terminal-surface0/80`;
+          ? `${baseButtonClassName}`
+          : `${baseButtonClassName} max-[640px]:hover:bg-terminal-surface0/35`;
         let textClassName =
           "whitespace-pre-wrap text-terminal-overlay1 group-hover:text-terminal-subtext0 max-[640px]:leading-6";
 

@@ -75,12 +75,12 @@ function PortfolioApp({ config }: { config: PortfolioConfig }) {
 
   return (
     <main className="min-h-screen min-h-dvh bg-terminal-mantle font-terminal text-base leading-[1.35] text-terminal-text max-[640px]:text-sm">
-      <section className="flex min-h-screen min-h-dvh flex-col bg-terminal-base max-[640px]:m-2 max-[640px]:min-h-[calc(100dvh-1rem)] max-[640px]:overflow-hidden max-[640px]:rounded-[1.35rem] max-[640px]:border max-[640px]:border-terminal-surface1/80 max-[640px]:shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+      <section className="flex min-h-screen min-h-dvh flex-col bg-terminal-base">
         <TerminalTabs activePage={activePage} onSelect={setActivePage} />
         <section className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto">
           {content}
         </section>
-        <footer className="min-h-[1.7rem] overflow-x-auto overflow-y-hidden whitespace-nowrap bg-terminal-mantle px-4 py-[0.2rem] text-terminal-overlay0 [scrollbar-width:none] [padding-bottom:calc(0.2rem+env(safe-area-inset-bottom))] [&::-webkit-scrollbar]:hidden max-[640px]:overflow-x-hidden max-[640px]:whitespace-normal max-[640px]:border-t max-[640px]:border-terminal-surface1/80 max-[640px]:bg-terminal-surface0 max-[640px]:px-3 max-[640px]:py-2 max-[640px]:text-center max-[640px]:text-[0.72rem] max-[640px]:leading-relaxed">
+        <footer className="min-h-[1.7rem] overflow-x-auto overflow-y-hidden whitespace-nowrap bg-terminal-mantle px-4 py-[0.2rem] text-terminal-overlay0 [scrollbar-width:none] [padding-bottom:calc(0.2rem+env(safe-area-inset-bottom))] [&::-webkit-scrollbar]:hidden max-[640px]:overflow-x-hidden max-[640px]:whitespace-normal max-[640px]:border-t max-[640px]:border-terminal-surface1/80 max-[640px]:bg-terminal-mantle max-[640px]:px-3 max-[640px]:py-2 max-[640px]:text-left max-[640px]:text-[0.72rem] max-[640px]:leading-relaxed">
           {statusText}
         </footer>
       </section>

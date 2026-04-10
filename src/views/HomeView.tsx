@@ -72,7 +72,7 @@ export function HomeView({ asciiArt, intro, title }: HomeViewProps) {
 
   return (
     <section className="flex min-h-full flex-col items-center justify-center px-6 py-8 text-center max-[640px]:justify-start max-[640px]:px-3 max-[640px]:py-5 max-[480px]:px-[0.6rem]">
-      <div className="flex w-full max-w-[38rem] flex-col items-center gap-4 max-[640px]:rounded-[1.2rem] max-[640px]:border max-[640px]:border-terminal-surface1/80 max-[640px]:bg-terminal-mantle/45 max-[640px]:px-3 max-[640px]:py-4 max-[640px]:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+      <div className="flex w-full max-w-[38rem] flex-col items-center gap-4 max-[640px]:px-1 max-[640px]:py-2">
         <div ref={containerRef} className="flex w-full justify-center overflow-visible">
           <div className="relative max-w-full overflow-visible" style={asciiWrapperStyle}>
             <pre
@@ -84,7 +84,7 @@ export function HomeView({ asciiArt, intro, title }: HomeViewProps) {
             </pre>
           </div>
         </div>
-        <h1 className="m-0 text-[clamp(1rem,1.6vw,1.4rem)] font-bold text-terminal-blue">{title}</h1>
+        <h1 className="m-0 text-[clamp(1rem,1.6vw,1.4rem)] font-bold text-terminal-blue max-[640px]:pt-1">{title}</h1>
         <pre className="m-0 max-w-[74ch] whitespace-pre-wrap text-terminal-subtext0 wrap-anywhere max-[640px]:w-full max-[640px]:text-left">{intro}</pre>
       </div>
     </section>

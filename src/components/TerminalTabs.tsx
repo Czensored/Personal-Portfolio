@@ -38,7 +38,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
         })}
         <div className="flex-1 bg-terminal-surface0 max-[640px]:hidden" aria-hidden="true" />
       </nav>
-      <div className="hidden border-b border-terminal-surface1/80 bg-terminal-surface0/95 max-[640px]:block">
+      <div className="hidden border-b border-terminal-surface1/80 bg-terminal-surface0 max-[640px]:block">
         <div className="flex items-center justify-between gap-3 px-3 py-2.5 [padding-top:calc(0.65rem+env(safe-area-inset-top))]">
           <div className="min-w-0">
             <div className="text-[0.62rem] uppercase tracking-[0.22em] text-terminal-overlay0">
@@ -48,7 +48,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
           </div>
           <button
             type="button"
-            className="flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-terminal-surface1 bg-terminal-base px-3 text-terminal-text shadow-[inset_0_-1px_0_var(--color-terminal-surface1)] outline-none transition-colors duration-150 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]"
+            className="flex min-h-10 min-w-10 items-center justify-center border border-terminal-surface1 bg-terminal-base px-3 text-terminal-text outline-none transition-colors duration-150 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]"
             onClick={() => setIsMobileMenuOpen((current) => !current)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-terminal-nav"
@@ -72,7 +72,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
         >
           <nav
             id="mobile-terminal-nav"
-            className={`mx-3 min-h-0 overflow-hidden rounded-xl border border-terminal-surface1 bg-terminal-base shadow-[0_14px_32px_rgba(0,0,0,0.28)] divide-y divide-terminal-surface1/80 transition-all duration-200 ease-out ${isMobileMenuOpen ? "mb-3 translate-y-0" : "mb-0 -translate-y-2 pointer-events-none"}`}
+            className={`min-h-0 overflow-hidden border-t border-terminal-surface1 bg-terminal-base divide-y divide-terminal-surface1/80 transition-all duration-200 ease-out ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-2 pointer-events-none"}`}
             aria-label="Mobile portfolio pages"
             aria-hidden={!isMobileMenuOpen}
           >
