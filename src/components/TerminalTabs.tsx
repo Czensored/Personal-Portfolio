@@ -54,18 +54,27 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
             aria-controls="mobile-terminal-nav"
             aria-label="Toggle navigation menu"
           >
-            <span className="flex flex-col gap-1" aria-hidden="true">
-              <span className="block h-px w-4 bg-current" />
-              <span className="block h-px w-4 bg-current" />
-              <span className="block h-px w-4 bg-current" />
+            <span className="relative block h-4 w-4" aria-hidden="true">
+              <span
+                className={`absolute left-0 h-px w-4 bg-current transition-all duration-200 ${isMobileMenuOpen ? "top-[7px] rotate-45" : "top-[2px]"}`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] h-px w-4 bg-current transition-all duration-150 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
+              />
+              <span
+                className={`absolute left-0 h-px w-4 bg-current transition-all duration-200 ${isMobileMenuOpen ? "top-[7px] -rotate-45" : "top-[12px]"}`}
+              />
             </span>
           </button>
         </div>
-        {isMobileMenuOpen ? (
+        <div
+          className={`grid transition-all duration-200 ease-out ${isMobileMenuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+        >
           <nav
             id="mobile-terminal-nav"
-            className="mx-3 mb-3 overflow-hidden rounded-xl border border-terminal-surface1 bg-terminal-base shadow-[0_14px_32px_rgba(0,0,0,0.28)] divide-y divide-terminal-surface1/80"
+            className={`mx-3 min-h-0 overflow-hidden rounded-xl border border-terminal-surface1 bg-terminal-base shadow-[0_14px_32px_rgba(0,0,0,0.28)] divide-y divide-terminal-surface1/80 transition-all duration-200 ease-out ${isMobileMenuOpen ? "mb-3 translate-y-0" : "mb-0 -translate-y-2 pointer-events-none"}`}
             aria-label="Mobile portfolio pages"
+            aria-hidden={!isMobileMenuOpen}
           >
             {pages.map((page) => {
               const isActive = page === activePage;
@@ -83,7 +92,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
               );
             })}
           </nav>
-        ) : null}
+        </div>
       </div>
       <div className="h-px bg-terminal-surface1" aria-hidden="true" />
     </header>
