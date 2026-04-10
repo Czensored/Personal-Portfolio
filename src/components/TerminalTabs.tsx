@@ -12,7 +12,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
   const desktopTabClassName =
     "flex shrink-0 items-center self-stretch cursor-pointer border-0 px-4 py-2 whitespace-nowrap transition-colors duration-150 outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]";
   const mobileTabClassName =
-    "block w-full cursor-pointer border-0 px-3 py-2 text-left transition-colors duration-150 outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]";
+    "flex w-full items-center justify-between gap-3 border-0 px-3 py-3 text-left text-sm transition-colors duration-150 outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]";
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -38,12 +38,17 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
         })}
         <div className="flex-1 bg-terminal-surface0 max-[640px]:hidden" aria-hidden="true" />
       </nav>
-      <div className="hidden bg-terminal-surface0 max-[640px]:block">
-        <div className="flex items-center justify-between gap-3 px-3 py-2">
-          <span className="truncate font-bold text-terminal-white">{pageLabels[activePage]}</span>
+      <div className="hidden border-b border-terminal-surface1/80 bg-terminal-surface0/95 max-[640px]:block">
+        <div className="flex items-center justify-between gap-3 px-3 py-2.5 [padding-top:calc(0.65rem+env(safe-area-inset-top))]">
+          <div className="min-w-0">
+            <div className="text-[0.62rem] uppercase tracking-[0.22em] text-terminal-overlay0">
+              Navigation
+            </div>
+            <div className="truncate font-bold text-terminal-text">{pageLabels[activePage]}</div>
+          </div>
           <button
             type="button"
-            className="flex min-h-9 min-w-9 items-center justify-center rounded-md border border-terminal-surface1 bg-terminal-base px-2 text-terminal-text outline-none transition-colors duration-150 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]"
+            className="flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-terminal-surface1 bg-terminal-base px-3 text-terminal-text shadow-[inset_0_-1px_0_var(--color-terminal-surface1)] outline-none transition-colors duration-150 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]"
             onClick={() => setIsMobileMenuOpen((current) => !current)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-terminal-nav"
@@ -57,16 +62,23 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
           </button>
         </div>
         {isMobileMenuOpen ? (
-          <nav id="mobile-terminal-nav" className="border-t border-terminal-surface1 bg-terminal-base" aria-label="Mobile portfolio pages">
+          <nav
+            id="mobile-terminal-nav"
+            className="mx-3 mb-3 overflow-hidden rounded-xl border border-terminal-surface1 bg-terminal-base shadow-[0_14px_32px_rgba(0,0,0,0.28)] divide-y divide-terminal-surface1/80"
+            aria-label="Mobile portfolio pages"
+          >
             {pages.map((page) => {
               const isActive = page === activePage;
               const tabClassName = isActive
-                ? `${mobileTabClassName} bg-terminal-blue font-bold text-terminal-crust`
+                ? `${mobileTabClassName} bg-terminal-blue font-bold text-white`
                 : `${mobileTabClassName} text-terminal-text hover:bg-terminal-surface1/70 hover:text-terminal-rosewater`;
 
               return (
                 <button key={page} type="button" className={tabClassName} onClick={() => onSelect(page)} aria-pressed={isActive}>
-                  {pageLabels[page]}
+                  <span>{pageLabels[page]}</span>
+                  <span className="text-xs opacity-80" aria-hidden="true">
+                    {isActive ? "▸" : "•"}
+                  </span>
                 </button>
               );
             })}
