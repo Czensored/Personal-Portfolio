@@ -46,7 +46,7 @@ export function ExperienceView({
             </div>
 
             {meta ? (
-              <p className="mb-3 mt-0 whitespace-pre-wrap text-terminal-subtext0 [overflow-wrap:anywhere] [padding-left:2ch] max-[640px]:[padding-left:0]">
+              <p className="mb-3 mt-0 whitespace-pre-wrap pl-[2ch] text-terminal-subtext0 [overflow-wrap:anywhere] max-[640px]:pl-0">
                 {meta}
               </p>
             ) : null}

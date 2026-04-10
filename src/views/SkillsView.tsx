@@ -60,16 +60,35 @@ export function SkillsView({
                     </span>
                   </div>
                 ) : (
-                  <div
-                    key={item.name}
-                    className="whitespace-pre-wrap text-terminal-green"
-                  >
+                  <div key={item.name} className="whitespace-pre-wrap text-terminal-green">
                     {"  ● "}
                     {item.name}
                   </div>
                 ),
               )}
             </div>
+            {currentCategory.noteText ? (
+              <div className="mt-5 max-w-[62ch] text-terminal-subtext0">
+                {currentCategory.noteTitle ? (
+                  <p className="mb-2 mt-0 text-terminal-overlay1">
+                    {currentCategory.noteTitle}
+                  </p>
+                ) : null}
+                <p className="m-0 leading-[1.45]">
+                  {currentCategory.noteText}{" "}
+                  {currentCategory.noteHref ? (
+                    <a
+                      className="underline hover:text-terminal-blue"
+                      href={currentCategory.noteHref}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View repo
+                    </a>
+                  ) : null}
+                </p>
+              </div>
+            ) : null}
           </div>
         ) : (
           <div className="whitespace-pre-wrap text-terminal-overlay0">

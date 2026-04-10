@@ -22,6 +22,9 @@ type RawConfig = {
   skills?: Array<{
     category?: string;
     items?: RawSkillItem[];
+    note_title?: string;
+    note_text?: string;
+    note_href?: string;
   }>;
   projects?: Array<{
     name?: string;
@@ -72,6 +75,9 @@ export type SkillItem = {
 export type SkillCategory = {
   category: string;
   items: SkillItem[];
+  noteTitle: string;
+  noteText: string;
+  noteHref: string;
 };
 
 export type Project = {
@@ -171,6 +177,9 @@ function normalizeConfig(raw: RawConfig): PortfolioConfig {
         items: (category.items ?? [])
           .map(normalizeSkillItem)
           .filter((item) => item.name.length > 0),
+        noteTitle: asText(category.note_title),
+        noteText: asText(category.note_text),
+        noteHref: asText(category.note_href),
       }))
       .filter((category) => category.category.length > 0),
     projects: (raw.projects ?? [])

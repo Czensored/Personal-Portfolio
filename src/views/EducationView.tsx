@@ -42,7 +42,7 @@ export function EducationView({
             </div>
 
             {meta ? (
-              <p className="mb-3 mt-0 whitespace-pre-wrap text-terminal-subtext0 [overflow-wrap:anywhere] [padding-left:2ch] max-[640px]:[padding-left:0]">
+              <p className="mb-3 mt-0 whitespace-pre-wrap pl-[2ch] text-terminal-subtext0 [overflow-wrap:anywhere] max-[640px]:pl-0">
                 {meta}
               </p>
             ) : null}
@@ -61,7 +61,7 @@ export function EducationView({
 
             {currentEntry.honors.length > 0 ? (
               <>
-                <p className="mb-3 mt-5 text-terminal-subtext0">Honors &amp; Awards</p>
+                <p className="mb-3 mt-5 pl-[2ch] text-terminal-subtext0 max-[640px]:pl-0">Honors &amp; Awards</p>
                 <ul className="m-0 flex list-none flex-col gap-[0.85rem] p-0">
                   {currentEntry.honors.map((honor) => (
                     <li

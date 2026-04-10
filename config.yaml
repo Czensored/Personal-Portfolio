@@ -11,18 +11,15 @@ ascii_art: |
 
 intro: |
   Hi, I'm Isaac Salzman.
-  New-grad software engineer focused on building AI/ML features that ship.
-  I study Computer Science (B.S.) and Mathematics (B.A.) at Sonoma State
-  and have hands-on experience with Python, data pipelines, and
-  LLM-powered prototypes from internships and campus work.
+  New-grad software engineer focused on building AI/ML features that ship. I study Computer Science (B.S.) and Mathematics (B.A.) at Sonoma State and have hands-on experience with Python, data pipelines, and LLM-powered prototypes from internships and campus work.
 
   Navigate with arrow keys and learn more about me!
 
 skills:
   - category: "Languages"
     items:
-      - "Rust"
       - "Python"
+      - "Rust"
       - "C++"
       - "C"
       - "MySQL"
@@ -45,11 +42,14 @@ skills:
       - "Vim"
       - "LaTeX"
       - "Markdown"
+    note_title: "Dotfiles"
+    note_text: "I maintain a personal dotfiles repo for my Neovim, shell, and terminal workflow."
+    note_href: "https://github.com/Czensored/.dotfiles"
 
 projects:
   - name: "Shorelark Expanded"
     description: |
-      August 2025 - March 2026 | Senior Project at Sonoma State University
+      August 2025 - March 2026 | Senior Capstone at Sonoma State University
 
       Shorelark Expanded is a browser-based evolution simulator built in Rust and WebAssembly.
       This project builds on an existing evolution simulation and adds selection pressures to visualize their effect on the population, including food constraints, hunger constraints, and a predatorial species.
@@ -77,7 +77,7 @@ projects:
 
   - name: "PCformer"
     description: |
-      May 2024 - September 2024 | Research internship at UCSF
+      May 2024 - September 2024 | Research Internship at UCSF
 
       Transformer-based pipeline for cell type classification across multimodal single-cell and spatial omics datasets.
 
@@ -93,7 +93,7 @@ projects:
 
   - name: "Othello AI"
     description: |
-      June 2024 - July 2025 | Personal Project
+      June 2024 - July 2025
 
       Built an Othello/Reversi engine around classical adversarial search, then deployed it as a browser-playable Rust/Wasm demo.
       The current version keeps rendering and controls in JavaScript while running move selection in Rust compiled to WebAssembly.
@@ -120,7 +120,7 @@ projects:
 
   - name: "Grid Vision Reasoning System"
     description: |
-      January 2022 - March 2022 | Personal Project
+      January 2022 - March 2022
 
       Built a computer vision system to detect, segment, and reason about objects in grid-based challenge images.
       The project focused on robust perception plus rule-based spatial decision logic.
@@ -192,6 +192,6 @@ experiences:
 
 contact:
   email: "isaac@isaacsalzman.com"
-  resume: "Isaac_Salzman_Resume.pdf"
   github: "https://github.com/Czensored"
   linkedin: "https://www.linkedin.com/in/isaac-salzman/"
+  resume: "Isaac_Salzman_Resume.pdf"
