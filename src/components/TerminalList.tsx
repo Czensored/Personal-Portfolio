@@ -16,7 +16,7 @@ export function TerminalList<T,>({
   selectedIndex,
 }: TerminalListProps<T>) {
   const baseButtonClassName =
-    "group w-full cursor-pointer border-0 bg-transparent px-0 py-[0.12rem] text-left outline-none transition-colors duration-150 focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px] max-[640px]:min-h-11 max-[640px]:border-b max-[640px]:border-terminal-surface1/60 max-[640px]:px-1 max-[640px]:py-2";
+    "group w-full cursor-pointer border-0 bg-transparent px-0 py-[0.12rem] text-left outline-none transition-colors duration-150 focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px] max-[640px]:min-h-11 max-[640px]:border-b max-[640px]:border-terminal-surface1/60 max-[640px]:px-1 max-[640px]:py-2 last:border-b-0";
 
   return (
     <div className="flex flex-col">

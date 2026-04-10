@@ -38,7 +38,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
         })}
         <div className="flex-1 bg-terminal-surface0 max-[640px]:hidden" aria-hidden="true" />
       </nav>
-      <div className="hidden border-b border-terminal-surface1/80 bg-terminal-surface0 max-[640px]:block">
+      <div className="hidden bg-terminal-surface0 max-[640px]:block">
         <div className="flex items-center justify-between gap-3 px-3 py-2.5 [padding-top:calc(0.65rem+env(safe-area-inset-top))]">
           <div className="min-w-0">
             <div className="text-[0.62rem] uppercase tracking-[0.22em] text-terminal-overlay0">
