@@ -9,6 +9,29 @@ type ExperienceViewProps = {
   selectedIndex: number;
 };
 
+function renderHighlightText(highlight: string) {
+  const urlPattern = /(https?:\/\/[^\s)]+[^\s).,;!?])/g;
+  const parts = highlight.split(urlPattern);
+
+  return parts.map((part, index) => {
+    if (part.startsWith("http://") || part.startsWith("https://")) {
+      return (
+        <a
+          key={`${part}-${index}`}
+          className="underline hover:text-terminal-blue"
+          href={part}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {part}
+        </a>
+      );
+    }
+
+    return <span key={`${part}-${index}`}>{part}</span>;
+  });
+}
+
 export function ExperienceView({
   experiences,
   onSelect,
@@ -60,7 +83,7 @@ export function ExperienceView({
                   <span className="block" aria-hidden="true">
                     •
                   </span>
-                  <span className="leading-[1.35]">{highlight}</span>
+                  <span className="leading-[1.35]">{renderHighlightText(highlight)}</span>
                 </li>
               ))}
             </ul>

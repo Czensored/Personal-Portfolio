@@ -161,7 +161,7 @@ projects:
 education:
   - school: "Sonoma State University"
     location: "Rohnert Park, CA"
-    period: "Expected May 2026"
+    period: "2022 - Expected May 2026"
     degrees:
       - "B.S. Computer Science (GPA: 3.92)"
       - "B.A. Mathematics (GPA: 3.97)"
@@ -170,6 +170,14 @@ education:
       - "Dean's List: Fall 2022, Fall 2023, Spring 2024, Fall 2025"
       - "MESA Honors Program"
       - "Putnam Mathematical Competition (2025): Score 10, Rank 1375/4329"
+
+  - school: "Niigata University"
+    location: "Niigata Prefecture, Japan"
+    period: "September 2024 - August 2025"
+    degrees:
+      - "One-year academic exchange program focused on Japanese language study"
+      - "Completed coursework in Japanese language and communication"
+      - "Comfortable holding extended conversations in Japanese"
 
 experiences:
   - company: "UCSF"
@@ -180,6 +188,8 @@ experiences:
     highlights:
       - "Developed a transformer-based model to automatically annotate prostate cell types from multimodal single-cell and spatial omics data."
       - "Applied non-negative matrix factorization to identify neuroendocrine patterns in prostate cancer samples from the RESPOND cohort of African American men."
+      - "Contributed to the submitted manuscript \"A single-cell and spatial atlas of prostate cancer reveals the combinatorial gene programs defining lineage plasticity and metastasis\" (Hanbing Song et al., incl. Isaac Salzman)."
+      - "Contributed to the AACR Annual Meeting 2025 poster presentation \"A gene program association study (GPAS) in prostate cancer reveals novel gene modules associated with plasticity and metastasis\" (Cancer Research, Abstract 7506). https://doi.org/10.1158/1538-7445.AM2025-7506"
 
   - company: "Sonoma State University"
     role: "Computer Science and Mathematics Tutor"
