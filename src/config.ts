@@ -34,6 +34,7 @@ type RawConfig = {
     links?: Array<{
       label?: string;
       href?: string;
+      text?: string;
     }>;
     media?: Array<{
       type?: string;
@@ -92,6 +93,7 @@ export type Project = {
 export type ProjectLink = {
   label: string;
   href: string;
+  text: string;
 };
 
 export type ProjectMedia = {
@@ -192,6 +194,7 @@ function normalizeConfig(raw: RawConfig): PortfolioConfig {
           .map((link) => ({
             label: asText(link.label),
             href: asText(link.href),
+            text: asText(link.text),
           }))
           .filter((link) => link.label.length > 0 && link.href.length > 0),
         media: (project.media ?? [])

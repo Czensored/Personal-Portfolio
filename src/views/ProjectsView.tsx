@@ -160,7 +160,7 @@ export function ProjectsView({ onSelect, projects, selectedIndex }: ProjectsView
     ? hasCustomLinks
       ? currentProject.links
       : currentProject.url
-        ? [{ label: "", href: currentProject.url }]
+        ? [{ label: "", href: currentProject.url, text: "" }]
         : []
     : [];
   const descriptionLines = currentProject
@@ -226,7 +226,7 @@ export function ProjectsView({ onSelect, projects, selectedIndex }: ProjectsView
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {link.href}
+                  {link.text || link.href}
                 </a>
               </div>
             ))}
