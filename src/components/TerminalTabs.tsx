@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { pages, type PageKey } from "../config";
 import { pageLabels } from "../lib/terminal";
 
@@ -9,6 +9,9 @@ type TerminalTabsProps = {
 
 export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLElement | null>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
+  const mainSiteHref = "https://isaacsalzman.com";
   const desktopTabClassName =
     "flex shrink-0 items-center self-stretch cursor-pointer border-0 px-4 py-2 whitespace-nowrap transition-colors duration-150 outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]";
   const mobileTabClassName =
@@ -17,6 +20,21 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [activePage]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      return;
+    }
+
+    const activeElement = document.activeElement;
+
+    if (
+      activeElement instanceof HTMLElement &&
+      mobileMenuRef.current?.contains(activeElement)
+    ) {
+      mobileToggleRef.current?.focus();
+    }
+  }, [isMobileMenuOpen]);
 
   return (
     <header>
@@ -37,6 +55,12 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
           );
         })}
         <div className="flex-1 bg-terminal-surface0 max-[640px]:hidden" aria-hidden="true" />
+        <a
+          href={mainSiteHref}
+          className={`${desktopTabClassName} bg-terminal-surface0 text-terminal-subtext0 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater`}
+        >
+          Main Site
+        </a>
       </nav>
       <div className="hidden bg-terminal-surface0 max-[640px]:block">
         <div className="flex items-center justify-between gap-3 px-3 py-2.5 [padding-top:calc(0.65rem+env(safe-area-inset-top))]">
@@ -47,6 +71,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
             <div className="truncate font-bold text-terminal-text">{pageLabels[activePage]}</div>
           </div>
           <button
+            ref={mobileToggleRef}
             type="button"
             className="flex min-h-10 min-w-10 items-center justify-center border border-terminal-surface1 bg-terminal-base px-3 text-terminal-text outline-none transition-colors duration-150 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater focus-visible:outline focus-visible:outline-1 focus-visible:outline-terminal-blue focus-visible:outline-offset-[-1px]"
             onClick={() => setIsMobileMenuOpen((current) => !current)}
@@ -71,6 +96,7 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
           className={`grid transition-all duration-200 ease-out ${isMobileMenuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
         >
           <nav
+            ref={mobileMenuRef}
             id="mobile-terminal-nav"
             className={`min-h-0 overflow-hidden border-t border-terminal-surface1 bg-terminal-base divide-y divide-terminal-surface1/80 transition-all duration-200 ease-out ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-2 pointer-events-none"}`}
             aria-label="Mobile portfolio pages"
@@ -91,6 +117,15 @@ export function TerminalTabs({ activePage, onSelect }: TerminalTabsProps) {
                 </button>
               );
             })}
+            <a
+              href={mainSiteHref}
+              className={`${mobileTabClassName} text-terminal-subtext0 hover:bg-terminal-surface1/70 hover:text-terminal-rosewater`}
+            >
+              <span>Main Site</span>
+              <span className="text-xs opacity-80" aria-hidden="true">
+                ↗
+              </span>
+            </a>
           </nav>
         </div>
       </div>
